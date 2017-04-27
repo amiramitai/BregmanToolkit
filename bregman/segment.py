@@ -1,7 +1,7 @@
 from __future__ import print_function
-import classifier
-import features
-import sound
+from bregman import classifier
+from bregman import features
+from bregman import sound
 import numpy as np
 import pylab as pl
 import scipy.signal

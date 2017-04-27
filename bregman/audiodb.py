@@ -1,9 +1,9 @@
 from __future__ import print_function
 # AudioDB libraries
 import glob
-import error
+from bregman import error
 import pylab
-import features
+from bregman import features
 from scipy.signal import resample
 
 # AudioDB - routines for audio database I/O, searching, and manipulation

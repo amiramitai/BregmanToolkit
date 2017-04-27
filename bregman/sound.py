@@ -2,7 +2,7 @@ from __future__ import print_function
 import os
 import numpy
 import subprocess
-import error
+from bregman import error
 import pdb
 # sound.py - audio file I/O and play functionality
 # Bregman - python toolkit for music information retrieval

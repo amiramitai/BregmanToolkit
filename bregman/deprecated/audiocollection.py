@@ -8,7 +8,7 @@ import shutil
 import subprocess
 import hashlib
 import random
-import error
+from bregman import error
 import features
 
 """

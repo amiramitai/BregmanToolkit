@@ -1,10 +1,10 @@
 from __future__ import print_function
 import pylab as P
-import error
+from bregman import error
 import glob
-import plca
-from sound import *
-from audiodb import *
+from bregman import plca
+from bregman.sound import *
+from bregman.audiodb import *
 import pdb
 import scipy.signal as sig
 

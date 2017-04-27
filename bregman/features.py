@@ -1,13 +1,13 @@
 from __future__ import print_function
 import pylab as P
 import numpy as np
-import error
+from bregman import error
 import glob
-import plca
-from sound import *
-from audiodb import *
+from bregman import plca
+from bregman.sound import *
+from bregman.audiodb import *
 import pdb
-from features_base import Features, feature_plot, feature_scale
+from bregman.features_base import Features, feature_plot, feature_scale
 
 
 # features.py - feature extraction and plotting
