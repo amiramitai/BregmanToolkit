@@ -763,7 +763,7 @@ class Features(object):
         self.lo = lo  # restore original lo edge
         a, b = self.CQFT.shape
         # integer division, number of complete octaves
-        complete_octaves = a / self.nbpo
+        complete_octaves = a // self.nbpo
         #complete_octave_bands = complete_octaves * self.nbpo
         # column-major ordering, like a spectrogram, is in FORTRAN order
         self.CHROMA = P.zeros((self.nbpo, b))

@@ -100,7 +100,7 @@ class WavOpen:
                 self.sig[index] = signal[index * self.num_channels] / 32768.
 
     def __len__(self):
-        return self.num_frames / self.n
+        return self.num_frames // self.n
 
     def __getitem__(self, k):
         while k < 0:
@@ -111,6 +111,9 @@ class WavOpen:
         self.index = k * self.n
         return self.next()
 
+    def __next__(self):
+        return self.next()
+        
     def next(self):
         num_to_read = self.n if self.index < (
             self.num_frames - self.n + 1) else (self.num_frames - self.index)
