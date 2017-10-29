@@ -381,13 +381,13 @@ class Features(object):
         self._outN = float(self.nfft / 2 + 1)
         if self._cqtN < 1:
             print ("warning: cqtN not positive definite")
-        mxnorm = P.empty(self._cqtN)  # Normalization coefficients
+        mxnorm = P.empty(int(self._cqtN))  # Normalization coefficients
         # P.array([i * self.sample_rate / float(self._fftN) for i in P.arange(self._outN)])
         fftfrqs = self._fftfrqs
         logfrqs = P.array([lo_edge * P.exp(P.log(2.0) * i / bpo)
                            for i in P.arange(self._cqtN)])
         logfbws = P.array([max(logfrqs[i] * (f_ratio - 1.0), self.sample_rate / float(self._fftN))
-                           for i in P.arange(self._cqtN)])
+                           for i in P.arange(int(self._cqtN))])
         #self._fftfrqs = fftfrqs
         self._logfrqs = logfrqs
         self._logfbws = logfbws
@@ -441,7 +441,7 @@ class Features(object):
             return False
         fp = self._check_feature_params()
         num_frames = len(self.x)
-        self.STFT = P.zeros((self.nfft / 2 + 1, num_frames), dtype='complex')
+        self.STFT = P.zeros((int(self.nfft / 2 + 1), num_frames), dtype='complex')
         self.win = P.ones(self.wfft) if self.window == 'rect' else P.np.sqrt(
             P.hanning(self.wfft))
         x = P.zeros(self.wfft)
